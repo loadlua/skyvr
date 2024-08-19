@@ -1,5 +1,10 @@
 -- sky vr
+local global = getgenv()
 
+if global.options.hatcollision then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/loadlua/skyvr/main/SkyVRHatdrop.lua"))()
+	return
+end
 
 local loader = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -86,8 +91,6 @@ do
 	errorr.TextStrokeTransparency = 0.000
 	errorr.TextWrapped = true
 end
-
-local global = getgenv()
 
 TextLabel.Text = "Loading..."
 t:TweenSize(UDim2.new(0,0,1,0),nil,Enum.EasingStyle.Linear,0)
